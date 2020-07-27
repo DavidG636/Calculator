@@ -39,3 +39,7 @@ table {
 .heading {
   text-align: center;
 }
+
+td:not(.text-td) {
+  text-align: center;
+}

@@ -24,11 +24,14 @@ $(function() {
       case "*":
       case "/":
         pastNumAndOperation = [];
-        processValue(buttonText);
         operationPressed = true;
         numberPressed = false;
+        processValue(buttonText);
         break;
       case "=":
+        if (numbers[1] == undefined) {
+          numbers.push(Number($("#result").val()));
+        }
         if (pastNumAndOperation[0] != undefined) {
           numbers = [numbers[0], pastNumAndOperation[0]];
           action = pastNumAndOperation[1];
@@ -49,9 +52,9 @@ $(function() {
         if (operationPressed) {
           $("#result").val(0);
         }
-        processValue(buttonText);
         operationPressed = false;
         numberPressed = true;
+        processValue(buttonText);
         break;
       default:
         break;
@@ -60,42 +63,71 @@ $(function() {
 
   function processValue(value) {
     if ((value == "+" || value == "-" || value == "*" || value == "/") && (operationPressed && !numberPressed)) {
-      numbers = [];
-      action = undefined;
+      if (action != undefined && numbers[0] != undefined) {
+        numbers.push(Number($("#result").val()));
+        solve(numbers, action);
+      }
+      else {
+        numbers = [];
+        action = undefined;
+      }
     }
 
     if (value == "+" && action == undefined) {
-      numbers.push(Number($("#result").val()));
-      action = "addition"
+      if (Number($("#result").val()) == numbers[0] && !numberPressed) {
+        action = value;
+        return;
+      }
+      else {
+        numbers.push(Number($("#result").val()));
+        action = value;
+      }
     } else if (value == "+" && action != undefined) {
       numbers.push(Number($("#result").val()));
-      console.log(numbers);
       solve(numbers, action);
-      action = "addition"
+      action = value;
     }
     else if (value == "-" && action == undefined) {
-      numbers.push(Number($("#result").val()));
-      action = "subtraction"
+      if (Number($("#result").val()) == numbers[0] && !numberPressed) {
+        action = value;
+        return;
+      }
+      else {
+        numbers.push(Number($("#result").val()));
+        action = value
+      }
     } else if (value == "-" && action != undefined) {
       numbers.push(Number($("#result").val()));
       solve(numbers, action);
-      action = "subtraction"
+      action = value;
     }
     else if (value == "*" && action == undefined) {
-      numbers.push(Number($("#result").val()));
-      action = "multiplication"
+      if (Number($("#result").val()) == numbers[0] && !numberPressed) {
+        action = value;
+        return;
+      }
+      else {
+        numbers.push(Number($("#result").val()));
+        action = value
+      }
     } else if (value == "*" && action != undefined) {
       numbers.push(Number($("#result").val()));
       solve(numbers, action);
-      action = "multiplication"
+      action = value;
     }
     else if (value == "/" && action == undefined) {
-      numbers.push(Number($("#result").val()));
-      action = "divsion"
+      if (Number($("#result").val()) == numbers[0] && !numberPressed) {
+        action = value;
+        return;
+      }
+      else {
+        numbers.push(Number($("#result").val()));
+        action = value
+      }
     } else if (value == "/" && action != undefined) {
       numbers.push(Number($("#result").val()));
       solve(numbers, action);
-      action = "division"
+      action = value;
     }else if ($("#result").val() == "0" && value != ".") {
       $("#result").val(value)
     } else {
@@ -107,14 +139,11 @@ $(function() {
     if (numberPressed && numArray[1] == undefined) {
       numbers.push(Number($("#result").val()));
       solve(numbers, operation);
-      return;
     }
 
     switch (operation) {
-      case "addition":
-      console.log(numArray[0], numArray[1]);
+      case "+":
         let sum = numArray[0] + numArray[1];
-        console.log(typeof sum, sum);
         if (sum % 1 === 0) {
           sum = Math.floor(sum);
         }
@@ -125,7 +154,7 @@ $(function() {
         numbers.push(sum);
         action = undefined;
         break;
-      case "subtraction":
+      case "-":
         let difference = numArray[0] - numArray[1];
         if (difference % 1 === 0) {
           difference = Math.floor(difference);
@@ -137,7 +166,7 @@ $(function() {
         numbers.push(difference);
         action = undefined;
         break;
-      case "multiplication":
+      case "*":
         let product = numArray[0] * numArray[1];
         if (product % 1 === 0) {
           product = Math.floor(product);
@@ -149,7 +178,7 @@ $(function() {
         numbers.push(product);
         action = undefined;
         break;
-      case "division":
+      case "/":
         let quotient = numArray[0] / numArray[1];
         if (quotient % 1 === 0) {
           quotient = Math.floor(quotient);
