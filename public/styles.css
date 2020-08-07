@@ -1,0 +1,46 @@
+html, body {
+  font: 20px Montserrat, sans-serif;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#be93c5, #7bc6cc);
+}
+
+input[type=button] {
+  background: linear-gradient(#bdc3c7, #2c3e50);
+  font-weight: bold;
+  font-size: 30pt;
+  width: 100%;
+  height: 100%;
+}
+input[type=text]:not(.algebraic-input) {
+  width: 100%;
+  height: 100%;
+  font-size: 30pt;
+}
+
+.text-td {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.heading {
+  text-align: center;
+  margin-top: 5px;
+}
+
+td:not(.text-td) {
+  text-align: center;
+  padding: 0 !important;
+}
+
+table {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 50vw;
+  height: 50vh;
+}
