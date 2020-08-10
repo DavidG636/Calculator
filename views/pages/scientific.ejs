@@ -10,4 +10,40 @@
 <script src='script.js' type="text/javascript"></script
 
 <% include ../partials/navbar %>
-<h1 class="heading"></h1>
+<h1 class="heading">Scientific Calculator</h1>
+
+<table border="2">
+       <tr>
+          <td colspan="3" class="text-td"><input type="text" disabled="disabled" id="result"/></td>
+          <td><button class="calc-button" type="button" data-clear>C</button></td>
+          <td><button class="calc-button" type="button" data-operation>&#177;</button></td>
+       </tr>
+       <tr>
+         <td><button class="calc-button" type="button" data-operation>√</button></td>
+          <td><button class="calc-button" type="button" data-number>1</button></td>
+          <td><button class="calc-button" type="button" data-number>2</button></td>
+          <td><button class="calc-button" type="button" data-number>3</button></td>
+          <td><button class="calc-button" type="button" data-operation>/</button></td>
+       </tr>
+       <tr>
+         <td><button class="calc-button" type="button" data-number>π</button></td>
+          <td><button class="calc-button" type="button" data-number>4</button></td>
+          <td><button class="calc-button" type="button" data-number>5</button></td>
+          <td><button class="calc-button" type="button" data-number>6</button></td>
+          <td><button class="calc-button" type="button" data-operation>-</button></td>
+       </tr>
+       <tr>
+         <td><button class="calc-button" type="button" style="font-style: italic;" data-number>e</button></td>
+          <td><button class="calc-button" type="button" data-number>7</button></td>
+          <td><button class="calc-button" type="button" data-number>8</button></td>
+          <td><button class="calc-button" type="button" data-number>9</button></td>
+          <td><button class="calc-button" type="button" data-operation>+</button></td>
+       </tr>
+       <tr>
+         <td><button class="calc-button" type="button" data-operation>x<sup>2</sup></button></td>
+         <td><button class="calc-button" type="button" data-number>.</button></td>
+         <td><button class="calc-button" type="button" data-number>0</button></td>
+         <td><button class="calc-button" type="button" data-solve>=</button></td>
+         <td><button class="calc-button" type="button" data-operation>X</button></td>
+       </tr>
+    </table>

@@ -7,14 +7,23 @@ html, body {
   background: linear-gradient(#be93c5, #7bc6cc);
 }
 
-input[type=button] {
+.calc-button {
   background: linear-gradient(#bdc3c7, #2c3e50);
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 30pt;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
-input[type=text]:not(.algebraic-input) {
+
+.calc-button:hover {
+  background-color: #f8f9d2;
+  background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+  border-width: thick;
+}
+
+input[type=text] {
+  text-align: right;
   width: 100%;
   height: 100%;
   font-size: 30pt;
@@ -43,4 +52,9 @@ table {
   transform: translateX(-50%);
   width: 50vw;
   height: 50vh;
+}
+
+.logo {
+  width: auto;
+  height: 44px;
 }
