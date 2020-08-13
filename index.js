@@ -28,3 +28,7 @@ app.get('/standard', function (req, res) {
 app.get('/scientific', function (req, res) {
   res.render('pages/scientific');
 })
+
+app.get('/compound', function (req, res) {
+  res.render('pages/compound');
+})

@@ -44,7 +44,7 @@ td:not(.text-td) {
   padding: 0 !important;
 }
 
-table {
+.calc-table, .compound-calculator {
   position: absolute;
   top: 30%;
   left: 50%;
@@ -57,4 +57,49 @@ table {
 .logo {
   width: auto;
   height: 44px;
+}
+
+#startingAmount, #interestRate, #numberOfDays, #reinvestRate, #includingWeekends {
+  width: 100%;
+  height: 4vh;
+  text-align: left;
+  font-size: 12pt;
+}
+
+.compound-calculator {
+  background: linear-gradient(#bdc3c7, #2c3e50);
+}
+
+
+.calc-btn {
+  background-color: lightgreen;
+  float: right;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.reset-btn {
+  background-color: red;
+  float: left;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.compound-buttons {
+  margin-top: 5px;
+}
+
+.compound-label {
+  padding-left: 2px;
+}
+
+.compound-info {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 50vw;
+  height: auto;
+  display:none;
 }
