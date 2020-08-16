@@ -103,3 +103,29 @@ td:not(.text-td) {
   height: auto;
   display:none;
 }
+
+.calc-vid {
+  box-shadow: 5px 10px linear-gradient(rgb(170,162,199), rgb(135,188,202));
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 50vw;
+  height: 50vh;
+}
+
+.calc-vid {
+  border: none;
+  outline: none;
+}
+
+.calc-intro {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  margin-top: 15px;
+  font-size: 24pt;
+}

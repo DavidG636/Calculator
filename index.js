@@ -15,6 +15,7 @@ const resolve = require('path').resolve
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/images'));
+app.use(express.static(__dirname + '/videos'));
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
