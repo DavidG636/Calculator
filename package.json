@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/DavidG636/Calculator#readme",
   "dependencies": {
-    "mathjs": "^7.1.0"
+    "mathjs": "^15.2.0"
   }
 }
